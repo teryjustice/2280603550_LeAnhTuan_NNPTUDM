@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Posts - JSON Server</title>
+    <meta name="description" content="Ứng dụng quản lý posts với JSON Server, hỗ trợ xóa mềm và ID tự tăng">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-orb"></div>
+    <div class="container">
+        <header>
+            <h1>📝 Quản Lý Posts</h1>
+            <p>Ứng dụng với JSON Server - Xóa mềm & ID tự tăng</p>
+        </header>
+
+        <!-- Form thêm/sửa post -->
+        <div class="card form-card">
+            <div class="card-header">
+                <h2 id="form-title">➕ Thêm Post Mới</h2>
+            </div>
+            <div class="card-body">
+                <form id="post-form">
+                    <input type="hidden" id="post-id">
+                    <div class="form-group">
+                        <label for="post-title">Tiêu đề</label>
+                        <input type="text" id="post-title" placeholder="Nhập tiêu đề post..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-views">Lượt xem</label>
+                        <input type="number" id="post-views" placeholder="Nhập số lượt xem..." min="0" value="0"
+                            required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="submit-btn">
+                            <span>Thêm Post</span>
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="cancel-btn" style="display: none;">
+                            <span>Hủy</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Danh sách posts -->
+        <div class="card">
+            <div class="card-header">
+                <h2>📋 Danh Sách Posts</h2>
+                <div class="filter-buttons">
+                    <button class="btn-filter active" data-filter="all">Tất cả</button>
+                    <button class="btn-filter" data-filter="active">Hoạt động</button>
+                    <button class="btn-filter" data-filter="deleted">Đã xóa</button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div id="posts-list" class="posts-list">
+                    <div class="loading">Đang tải dữ liệu...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thống kê -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-content">
+                    <div class="stat-label">Tổng Posts</div>
+                    <div class="stat-value" id="total-posts">0</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div class="stat-content">
+                    <div class="stat-label">Đang hoạt động</div>
+                    <div class="stat-value" id="active-posts">0</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🗑️</div>
+                <div class="stat-content">
+                    <div class="stat-label">Đã xóa</div>
+                    <div class="stat-value" id="deleted-posts">0</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">👁️</div>
+                <div class="stat-content">
+                    <div class="stat-label">Tổng lượt xem</div>
+                    <div class="stat-value" id="total-views">0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
