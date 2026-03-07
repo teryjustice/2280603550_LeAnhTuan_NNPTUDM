@@ -1,8 +1,3 @@
-const express = require('express')
-let router = express.Router()
-let {GenID,GetCateByID} = require('../utils/IDHandler')
-let slugify = require('slugify')
-
 let dataProducts = [
     {
         "id": 99,
@@ -167,36 +162,7 @@ let dataCategories = [
         "updatedAt": "2026-03-02T23:55:29.000Z"
     }
 ]
-
-router.get('/:id', (req, res) => {//req.params
-    let result = dataCategories.filter(
-        function (e) {
-            return e.id == req.params.id;
-        }
-    )
-    res.send(result)
-})
-router.get('/', (req, res) => {//req.params
-    res.send(dataCategories)
-})
-router.get('/:id/products', (req, res) => {//req.params
-    let idCate = req.params.id;
-    let filterData = dataCategories.filter(
-        function (e) {
-            return e.id == idCate;
-        }
-    )
-    if (filterData.length == 0) {
-        res.status(404).send("id khong hop le")
-    } else {
-        let result = dataProducts.filter(
-            function (e) {
-                return e.category.id == idCate;
-            }
-        )
-        res.send(result)
-    }
-})
-
-
-module.exports = router;
+module.exports = {
+    dataProducts: dataProducts,
+    dataCategories: dataCategories
+}
