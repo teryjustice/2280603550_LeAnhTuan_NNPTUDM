@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập Quản Lý Sản Phẩm JS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-orb"></div>
+    <div class="container">
+        <header>
+            <h1>Quản Lý Sản Phẩm</h1>
+            <p>Giải bài tập JavaScript với giao diện hiện đại</p>
+        </header>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="tag">Câu 1</span>
+                    <h2>Constructor Product</h2>
+                </div>
+                <div class="card-body">
+                    <p>Khai báo constructor function Product.</p>
+                    <pre><code id="q1-result"></code></pre>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="tag">Câu 2</span>
+                    <h2>Khởi tạo Mảng</h2>
+                </div>
+                <div class="card-body">
+                    <p>Mảng products với 6 sản phẩm, 2 danh mục.</p>
+                    <div id="q2-result" class="json-output"></div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="tag">Câu 3</span>
+                    <h2>Tên & Giá</h2>
+                </div>
+                <div class="card-body">
+                    <p>Mảng mới chỉ chứa name và price.</p>
+                    <div id="q3-result" class="list-output"></div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="tag">Câu 4</span>
+                    <h2>Lọc Tồn Kho</h2>
+                </div>
+                <div class="card-body">
+                    <p>Các sản phẩm còn hàng (quantity > 0).</p>
+                    <div id="q4-result" class="list-output"></div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="tag">Câu 5</span>
+                    <h2>Kiểm Tra Giá > 30tr</h2>
+                </div>
+                <div class="card-body">
+                    <p>Có sản phẩm nào giá trên 30.000.000 không?</p>
+                    <div id="q5-result" class="highlight-result"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="tag">Câu 6</span>
+                    <h2>Kiểm Tra Accessories</h2>
+                </div>
+                <div class="card-body">
+                    <p>Tất cả Accessories có đang bán không?</p>
+                    <div id="q6-result" class="highlight-result"></div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="tag">Câu 7</span>
+                    <h2>Tổng Giá Trị Kho</h2>
+                </div>
+                <div class="card-body">
+                    <p>Tổng price * quantity.</p>
+                    <div id="q7-result" class="highlight-result"></div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="tag">Câu 8</span>
+                    <h2>Duyệt for...of</h2>
+                </div>
+                <div class="card-body">
+                    <p>In ra: Tên - Danh mục - Trạng thái</p>
+                    <div id="q8-result" class="console-log"></div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="tag">Câu 9</span>
+                    <h2>Duyệt for...in</h2>
+                </div>
+                <div class="card-body">
+                    <p>In ra tên thuộc tính và giá trị (ví dụ sản phẩm đầu tiên).</p>
+                    <div id="q9-result" class="console-log"></div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="tag">Câu 10</span>
+                    <h2>Sản phẩm Bán & Tồn Kho</h2>
+                </div>
+                <div class="card-body">
+                    <p>Danh sách tên các sản phẩm đang bán và còn hàng.</p>
+                    <div id="q10-result" class="highlight-result"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
