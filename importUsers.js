@@ -150,7 +150,7 @@ async function importUsers() {
             // Check if user already exists
             const existingUser = await User.findOne({ username: data.username });
             if (existingUser) {
-                console.log(\`User \${data.username} already exists, skipping...\`);
+                console.log(`User ${data.username} already exists, skipping...`);
                 continue;
             }
 
@@ -173,12 +173,12 @@ async function importUsers() {
                 from: '"Admin" <admin@haha.com>',
                 to: data.email,
                 subject: 'Welcome! Here is your account password',
-                text: \`Hello \${data.username},\n\nYour account has been created.\nYour password is: \${randomPassword}\n\nPlease keep it safe.\`,
-                html: \`<p>Hello <b>\${data.username}</b>,</p><p>Your account has been created.</p><p>Your password is: <b>\${randomPassword}</b></p><p>Please keep it safe.</p>\`
+                text: `Hello ${data.username},\n\nYour account has been created.\nYour password is: ${randomPassword}\n\nPlease keep it safe.`,
+                html: `<p>Hello <b>${data.username}</b>,</p><p>Your account has been created.</p><p>Your password is: <b>${randomPassword}</b></p><p>Please keep it safe.</p>`
             };
 
             await transporter.sendMail(mailOptions);
-            console.log(\`Created user \${data.username} and sent email to \${data.email}\`);
+            console.log(`Created user ${data.username} and sent email to ${data.email}`);
         }
 
         console.log("Finished importing all users!");
