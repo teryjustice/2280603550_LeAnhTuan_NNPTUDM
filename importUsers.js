@@ -118,10 +118,12 @@ const transporter = nodemailer.createTransport({
     host: "sandbox.smtp.mailtrap.io",
     port: 25,
     auth: {
-        user: "YOUR_MAILTRAP_USER",
-        pass: "YOUR_MAILTRAP_PASS"
+        user: "7a6478c595f406",
+        pass: "f1c77a07e14fc1"
     }
 });
+
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 function generateRandomPassword(length = 16) {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
@@ -167,7 +169,7 @@ async function importUsers() {
             });
 
             await newUser.save();
-            
+
             // Send Email
             const mailOptions = {
                 from: '"Admin" <admin@haha.com>',
@@ -179,6 +181,9 @@ async function importUsers() {
 
             await transporter.sendMail(mailOptions);
             console.log(`Created user ${data.username} and sent email to ${data.email}`);
+
+            // Add a 1 second delay to stay within Mailtrap free plan limits
+            await sleep(1000);
         }
 
         console.log("Finished importing all users!");
